@@ -276,10 +276,11 @@
         // panning interaction
         d3.selectAll(".pan")
           .on("click", function() {
-            //Get current translation offset
-            var offset = projection.translate()
             // set how much to move on each click
             var moveAmount = 50
+          /*
+            //Get current translation offset
+            var offset = projection.translate()
             //which way are we headed?
             var direction = d3.select(this).attr("id")
             //modify the offset, depending on the direction
@@ -299,24 +300,36 @@
 							default:
 								break;
             }
+          */
+            // set s.y to zero for now
+            var x = 0;
+            var y = 0;
+            // which way are we headed?
+            var direction = d3.select(this).attr("id")
+            //modify the offset, depending on the direction
+            switch(direction) {
+                case "north" :
+                  y += moveAmount; // increase y offset
+                  break;
+                case "south" :
+                  y -= moveAmount; // Decrease y offset
+                  break;
+                case "west" :
+                  x += moveAmount; // increase x offset
+                  break;
+                case "east" :
+                  x -= moveAmount;  //Decrease x offset
+                  break;
+                default:
+                  break;
+              }
 
-            // update projection with new offset
-            projection.translate(offset)
-            // update all paths and circles
-            svg.selectAll("path")
-              .transition()
-              .attr("d", path);
-            svg.selectAll("circle")
-              .transition()
-              .attr("cx", function(d) {
-                return projection([d.lon, d.lat])[0]
-              })
-              .attr("cy", function(d) {
-                return projection([d.lon, d.lat])[1]
-              })
-          })
+            
+            // this triggers a zoom event ,translaating by x, y
+            map.transition()
+              .call(zoom.translateBy, x, y)
+        })
       }
-	
 		</script>
 	</body>
 </html>
