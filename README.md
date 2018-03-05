@@ -1,3 +1,5 @@
+# 使用方法
+将本文件放到xampp中的htdocs下
 
 ### us-states.json
 

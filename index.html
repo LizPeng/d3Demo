@@ -29,7 +29,7 @@
       //Define map projection, using the Albers USA projection
       var projection = d3.geoAlbersUsa()
                         .translate([w/2, h/2])
-                        .scale([2000])
+                        .scale([800])
 
 			//Define path generator
 			var path = d3.geoPath()
@@ -77,7 +77,13 @@
       var map = svg.append("g")
           .attr("id", "map")
           .call(drag) // bind the dragging behavior
-
+      // create a new, invisible background rect to catch drag events
+      map.append("rect")
+        .attr("x", 0)
+				.attr("y", 0)
+				.attr("width", w)
+				.attr("height", h)
+				.attr("opacity", 0);
       // Load in agricultrue data
       d3.csv("us-ag-productivity.csv", function(data) {
         // Set input domain for color scale
