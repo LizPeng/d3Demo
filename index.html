@@ -28,8 +28,8 @@
 			var h = 300;
       //Define map projection, using the Albers USA projection
       var projection = d3.geoAlbersUsa()
-                        .translate([w/2, h/2])
-                        .scale([800])
+                        .translate([0, 0])
+                        
 
 			//Define path generator
 			var path = d3.geoPath()
@@ -204,7 +204,7 @@
                 .text(function(d) {
                   return d.place + ": Pop. " + formatAsThousands(d.population)
                 })
-              createPanButtons();
+                createPanButtons();
             })
           })
       })
