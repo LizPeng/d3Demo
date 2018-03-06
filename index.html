@@ -29,6 +29,12 @@
  			.zoom:hover text {
         fill: blue;
       }
+      .label {
+        font-family: Helvetica, sans-serif;
+				font-size: 11px;
+				fill: black;
+				text-anchor: middle;
+      }
 		</style>
 	</head>
 	<body>
@@ -55,7 +61,8 @@
                   // colors taken from colorbrewer.js included in the D3 download
       // number formatting for populatoin values
       var formatAsThousands = d3.format(","); // eg convert 123456 to "123,456"
-
+      // number formatting for ag producttivity values
+      var formatDecimals = d3.format(".3"); // eg: converts 1.23456 to "1.23"
       //Create SVG element
 			var svg = d3.select("body")
 						.append("svg")
@@ -80,6 +87,13 @@
           })
           .attr("cy", function(d) {
             return projection([d.lon, d.lat])[1]
+          })
+        svg.selectAll(".label")
+          .attr("x", function(d) {
+            return path.centroid(d)[0]
+          })
+          .attr("y", function(d) {
+            return path.centroid(d)[1]
           })
       }
       
@@ -182,22 +196,24 @@
                 return "#ccc"
               }
             })
-          //Bind data and create one path per GeoJSON feature
-          // svg.selectAll("path")
-          //   .data(json.features)
-          //   .enter()
-          //   .append("path")
-          //   .attr("d", path)
-          //   .style("fill", function(d) {
-          //     // get data value 
-          //     var value = d.properties.value;
-          //     if(value) {
-          //       return color(value)
-          //     } else {
-          //       return "#ccc"
-          //     }
-          //   })
-            
+          
+          // carete one label per state
+          map.selectAll("text")
+            .data(json.features)
+            .enter()
+            .append("text")
+            .attr("class", "label")
+            .attr("x", function(d) {
+              return path.centroid(d)[0]
+            })
+            .attr("y", function(d) {
+              return path.centroid(d)[1]
+            })
+            .text(function(d) {
+              if(d.properties.value) {
+                return formatDecimals(d.properties.value)
+              }
+            })
             // load in cities data
             d3.csv("us-cities.csv", function(data) {
               map.selectAll("circle")
