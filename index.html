@@ -2,9 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>D3: Loading GeoJSON data and generating SVG paths</title>
+		<title>D3: Constraining panning and zooming with extents</title>
 		<script type="text/javascript" src="./d3.js"></script>
-		<style type="text/css">
+    <style type="text/css">
+      div {
+        margin-bottom: 10px;
+      }
       .pan rect,
       .zoom rect{
         fill: black;
@@ -29,6 +32,10 @@
 		</style>
 	</head>
 	<body>
+    <div>
+      <button id="pnw">Pacific Northwest</button>
+      <button id="reset">Reset</button>
+    </div>
 		<script type="text/javascript">
 
 			//Width and height
@@ -401,6 +408,28 @@
           })
          
       }
+
+      // bind 'pacific northwest' button behavior
+      d3.select("#pnw")
+        .on("click", function() {
+          map.transition()
+            .call(zoom.transform, d3.zoomIdentity
+              .translate(w/2, h/2)
+              .scale(0.9)
+              .translate(600, 300)
+            )
+      })
+      //Bind 'Reset' button behavior
+			d3.select("#reset")
+				.on("click", function() {
+
+					map.transition()
+						.call(zoom.transform, d3.zoomIdentity  //Same as the initial transform
+							.translate(w/2, h/2)
+							.scale(0.25)
+							.translate(-center[0], -center[1]));
+
+			});
 		</script>
 	</body>
 </html>
