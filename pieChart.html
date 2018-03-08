@@ -55,16 +55,12 @@
 				})
 			}
 		}
-	
-		svg.append("text")
-				.attr("transform","translate("+outerRadius+","+outerRadius+")")
-				.attr("text-anchor", 'middle')
-				.attr("id","textInfo")
-				
+					
 		</script>
 		
 		<script>
-		// 添加shadow
+		// 没用的阴影 .style("filter", "url(#drop-shadow)")
+		// 添加shadow 
 			var defs = svg.append("defs")
 			
 		// create filter with id #drop-shadow
