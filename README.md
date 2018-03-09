@@ -4,11 +4,11 @@
 #### 仅供参考，以[原英文版](https://github.com/d3/d3/blob/master/API.md)为准
 
 ## D3.js(Data-Driven Documents)简介
----
+
 >D3.js是一个可以基于数据来操作文档的JavaScript库。可以帮助你使用HTML,CSS,SVG以及Canvas来展示数据。D3遵循现有的Web标准，可以不需要其他任何框架独立运行在现代浏览器中，它结合强大的可视化组件来驱动DOM操作。
 
 ## 需要哪些必备技能？
----
+
 ![D3必备技能](./info.png)
 
 >这里主要介绍一下SVG 和 D3的核心库
