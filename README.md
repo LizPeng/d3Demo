@@ -21,23 +21,20 @@ SVG: `<path>`元素是SVG基本形状中最强大的一个，它不仅能创建�
   - [比例尺](https://github.com/d3/d3/wiki/%E6%AF%94%E4%BE%8B%E5%B0%BA)
   - [过渡](https://github.com/d3/d3/wiki/%E8%BF%87%E6%B8%A1)
 
+---
 ### 一些好用的工具链接 
  > V3中文翻译比较全面，V4还没有完全翻译。
-##### D3.js中文API
-  - 版本号：[V3.5.17](https://github.com/d3/d3/wiki/API--%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C)
-  - 版本号：[V4.x](https://github.com/tianxuzhang/d3.v4-API-Translation)
-##### D3.js英文API
-  - 版本号：[V3.5.17](https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md)
-----
+##### [一个说人话的D3入门教程](https://github.com/xswei/d3js_doc/tree/master/d3js_doc_old/Introduction)
+##### API
+  - 中文：[V3.5.17](https://github.com/d3/d3/wiki/API--%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C)
+  - 中文：[V4.x](https://github.com/tianxuzhang/d3.v4-API-Translation)
+  - 英文：[V3.5.17](https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md)
+##### 常见demo&布局介绍
 - [检索不同版本的案例](http://blockbuilder.org/search#d3version=v4)
 
-##### 一些可能用到的布局
+- [包布局](https://github.com/d3/d3/wiki/%E5%8C%85%E5%B8%83%E5%B1%80)
 
-[直方图布局](https://bl.ocks.org/mbostock/3048450)
+- [分区布局](https://github.com/d3/d3/wiki/%E5%88%86%E5%8C%BA%E5%B8%83%E5%B1%80)
 
-[包布局](https://github.com/d3/d3/wiki/%E5%8C%85%E5%B8%83%E5%B1%80)
-
-[分区布局](https://github.com/d3/d3/wiki/%E5%88%86%E5%8C%BA%E5%B8%83%E5%B1%80)
-
-[饼布局](https://github.com/d3/d3/wiki/%E9%A5%BC%E5%B8%83%E5%B1%80)
+- [饼布局](https://github.com/d3/d3/wiki/%E9%A5%BC%E5%B8%83%E5%B1%80)
 
