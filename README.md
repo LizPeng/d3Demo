@@ -42,3 +42,4 @@ SVG: `<path>`元素是SVG基本形状中最强大的一个，它不仅能创建�
 
 - [饼布局](https://github.com/d3/d3/wiki/%E9%A5%BC%E5%B8%83%E5%B1%80)
 
+- [几个简单到飞起demo](https://github.com/LizPeng/d3Demo): 下载到xampp的htdocs就可以了
