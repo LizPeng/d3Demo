@@ -50,11 +50,12 @@ var svg = d3.select("body").append("svg")
 d3.tsv("pie.tsv", type, function(error, data) {
   var path = svg.datum(data).selectAll("path")
       .data(pie)
-    .enter().append("path")
+      .enter().append("path")
       .attr("fill", function(d, i) { return color(i); })
       .attr("d", arc)
       .each(function(d) { this._current = d; }); //动画step1： store the initial angles
-  d3.selectAll("input")
+      
+    d3.selectAll("input")
       .on("change", change);
 
   var timeout = setTimeout(function() {
@@ -63,7 +64,6 @@ d3.tsv("pie.tsv", type, function(error, data) {
 
   function change() {
     var value = this.value;
-    console.log(value)
     clearTimeout(timeout);
     pie.value(function(d) { return d[value]; }); // change the value function
     path = path.data(pie); // compute the new angles

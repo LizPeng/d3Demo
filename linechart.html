@@ -33,7 +33,7 @@ chart.append('text').html('State Population Over Time').attr('x', 200);
 let states, tipBox;
 d3.json('line.json', d => {
   states = d;
-
+  console.log(states)
   chart.selectAll()
     .data(states).enter()
     .append('path')
